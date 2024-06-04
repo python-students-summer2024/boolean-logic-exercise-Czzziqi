@@ -14,6 +14,12 @@ def is_sweltering():
       :returns: True if the temperature is over 90, False otherwise.
     """
     # write your code for this function below this line.
+    current_temperature=float(input(" What is the current temperature in Farenheit? "))
+    if current_temperature > 90:
+        return True
+    else:
+        return False
+      
 
 
 def is_warm():
@@ -25,6 +31,11 @@ def is_warm():
       :returns: True if the temperature is between 75 and 87, inclusive, False otherwise.
     """
     # write your code for this function below this line.
+    temperature_now= float(input("What is current temperature in Farenheit? "))
+    if 75<=temperature_now<=87:
+        return True
+    else:
+        return False
 
 
 def is_humid():
@@ -36,6 +47,13 @@ def is_humid():
       :returns: True if it is humid today, False otherwise.
     """
     # write your code for this function below this line.
+    current_humidity=input("Is current weather humid? ")
+    current_humidity.lower
+    if current_humidity=="yes":
+      return True
+    else:
+       return False
+
 
 
 def is_inclement():
@@ -47,6 +65,14 @@ def is_inclement():
       :returns: True if it is raining, snowing, or sleeting today, False otherwise.
     """
     # write your code for this function below this line.
+    weather_forecast = (input("What is today's weather forecast? ")).lower()
+    answer_types = ["rain", "snow", "sleet", "snowing", "raining", "sleeting"]
+    if weather_forecast in answer_types:
+        return True
+    else:
+        return False
+
+
 
 
 def is_typical_new_york_summer():
@@ -60,6 +86,13 @@ def is_typical_new_york_summer():
       :returns: True if the temperature is over 90 and it is humid, False otherwise.
     """
     # write your code for this function below this line.
+    temperature_over_90= is_sweltering()
+    humid_today= is_humid()
+    humidity_and_temperature= temperature_over_90 and humid_today
+    if humidity_and_temperature:
+        return True
+    else:
+        return False
 
 
 def is_cool_and_nice():
@@ -72,3 +105,13 @@ def is_cool_and_nice():
       :returns: True if the weather is cool and nice today, False otherwise.
     """
     # write your code for this function below this line.
+    not_sweltering= not (is_sweltering())
+    not_warm= not (is_warm())
+    not_humid= not(is_humid())
+    not_inclement= not(is_inclement())
+    weather_cool_and_nice= not_sweltering and not_warm and not_humid and not_inclement
+    if weather_cool_and_nice:
+        return True
+    else:
+        return False
+
